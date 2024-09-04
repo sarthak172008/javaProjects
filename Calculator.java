@@ -1,6 +1,7 @@
 import java.util.*;
 
 public static void calculator(int func, double a, double b) {
+    System.out.print("Your answer is : ");
     switch(func) {
         case 1: System.out.println(a+b);
         break;
