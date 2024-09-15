@@ -26,5 +26,5 @@ public static void main(String args[]) {
     System.out.println("Enter second number");
     double b = sc.nextInt();
 
-    calculator(func, a, b);
+    calculator(method, a, b);
 }
