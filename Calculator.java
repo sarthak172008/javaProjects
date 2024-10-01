@@ -9,9 +9,17 @@ public static void calculator(int method, double a, double b) {
         break;
         case 3: System.out.println(a*b);
         break;
-        case 4: System.out.println(a/b);
+        case 4: if(b==0) {
+            System.out.println("invalid Division");
+        } else {
+            System.out.println(a/b);
+        }
         break;
-        case 5: System.out.println(a%b);
+        case 5: if(b==0) {
+            System.out.println("Invalid Division");
+        } else {
+            System.out.println(a%b);
+        }
         break;
         default: System.out.println("Wrong path");
     }
