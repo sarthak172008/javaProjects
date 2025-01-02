@@ -1,2 +1,2 @@
 # javaProjects.
-<p>My all projects are in this Reposeterie</p>
+<p>My all projects are in this Repository</p>
