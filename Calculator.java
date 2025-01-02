@@ -17,7 +17,7 @@ public class Calculator {
                 System.out.println("your answer is : "+(a%b));
             }
             break;
-            default: System.out.println("Invalid Path");
+            default: System.out.println("Invalid Calculation");
         }
     }
     public static void main(String args[]) {
