@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import org.json.JSONOBject;
+import org.json.JSONObject;
 
 public class CurrencyConverter2INR {
     private static final String API_KEY = "53d6c8e8e01a0f3fb6cddc95";
