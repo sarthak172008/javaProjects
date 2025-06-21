@@ -2,6 +2,7 @@ package Calculator;
 
 public class Calculation {
     public static void calculator(int path, double a, double b) {
+        
         System.out.println("Your answer is :");
         switch(path){
             case 1 : System.out.println(a+b);
