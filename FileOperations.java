@@ -1,8 +1,8 @@
 import java.io.*;
 import java.util.Scanner;
 
-public class FileOprations {
-    public static void main(String[] args) {
+public class  FileOperations {
+    public static void main (String args[]) {
         Scanner sc = new Scanner(System.in);
         try {
             File obj = new File("myFile.txt");
@@ -10,10 +10,10 @@ public class FileOprations {
             if (obj.createNewFile()) {
                 System.out.println("File created: " + obj.getName());
             } else {
-                System.out.println("File already exists.");
+                System.err.println("File already exists.");
             }
         } catch (IOException e) {
-            System.out.println("An error has occurred.");
+            System.out.println("An error has occoured.");
             e.printStackTrace();
         }
 
@@ -21,24 +21,24 @@ public class FileOprations {
             FileWriter Writer = new FileWriter("myFile.txt", true);
 
             System.out.println("What do you want to write in the file 'myFile.txt'");
-            String a = sc.nextLine();
+            String  a = sc.nextLine();
             Writer.write(a);
             Writer.close();
 
-            System.out.println("Successfully written.");
+            System.out.println("Successfully writen.");
         } catch (IOException e) {
-            System.out.println("An error has occurred.");
+            System.out.println("An error occurred.");
             e.printStackTrace();
         }
 
         try {
-            File Obj = new File("myFile.txt");
-            Scanner Reader = new Scanner(Obj);
+            File obj = new File("myFile.txt");
+            Scanner Reader = new Scanner(obj);
 
             while (Reader.hasNextLine()) {
                 String data = Reader.nextLine();
-                System.out.print("The File now Contains : ");
-                System.out.println(data);
+                System.out.println("The file now contains: ");
+                System.out.println(data);                
             }
 
             Reader.close();
@@ -48,21 +48,24 @@ public class FileOprations {
             e.printStackTrace();
         }
 
-        File Obj = new File("myFile.txt");
+        File obj = new File("myFile.txt");
 
         System.out.println("Do you want to delete this file");
-        System.out.println("1 For NO || 2 For Yes");
-        int a  = sc.nextInt();
-        
-        switch (a) {
-            case 1 : System.out.println("The file is not Deleted");
+        System.out.println("1 for No || 2 for Yes");
+        int a = sc.nextInt();
+
+        switch(a) {
+            case 1: System.out.println("This file is not deleted");
             break;
 
-            case 2 : if(Obj.delete()) {
-                System.out.println("The deleted file is : " + Obj.getName());
+            case 2: if(obj.delete()) {
+                System.out.println("The deleted file is " + obj.getName());
             } else {
-                System.out.println("Failed in deleting in file.");
+                System.out.println("Failed to delete the file");
             }
-         }
+            break;
+
+            default: System.out.println("Failed to take an input");
+        }
     }
 }
