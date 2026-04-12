@@ -12,20 +12,19 @@ public class  FileOperations {
             } else {
                 System.err.println("File already exists.");
             }
-        } catch (IOException e) {
-            System.out.println("An error has occoured.");
-            e.printStackTrace();
-        }
-
-        try {
+            
             FileWriter Writer = new FileWriter("myFile.txt", true);
 
             System.out.println("What do you want to write in the file 'myFile.txt'");
             String  a = sc.nextLine();
-            Writer.write(a);
+            if(obj.length() == 0) {
+                Writer.write(a);
+            } else {
+                Writer.write(' ' + a);
+            }
             Writer.close();
 
-            System.out.println("Successfully writen.");
+            System.out.println("Successfully written.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
