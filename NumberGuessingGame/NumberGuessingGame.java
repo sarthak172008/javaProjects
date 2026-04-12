@@ -12,7 +12,7 @@ public class NumberGuessingGame {
 
         int userGuess;
 
-        System.out.println("Choose your dufficulty level: ");
+        System.out.println("Choose your difficulty level: ");
         System.out.println("1 for Easy (10 attempts)");
         System.out.println("2 for Medium (5 attempts)");
         System.out.println("3 for Hard (3 attempts)");
@@ -64,6 +64,7 @@ public class NumberGuessingGame {
                     System.out.println("Incorrect The answer is Lower than " + userGuess);
                 }
             }
+            default: System.out.println("Invalid difficulty level. Please restart the game and choose a valid option.");
         }
     }
 }
