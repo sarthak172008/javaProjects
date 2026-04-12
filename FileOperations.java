@@ -4,23 +4,26 @@ import java.util.Scanner;
 public class  FileOperations {
     public static void main (String args[]) {
         Scanner sc = new Scanner(System.in);
+        String fileName = null;
         try {
-            File obj = new File("myFile.txt");
+            System.out.println("What do you wanna name the file");
+            fileName = sc.nextLine() + ".txt";
+            File obj = new File(fileName);
 
             if (obj.createNewFile()) {
                 System.out.println("File created: " + obj.getName());
             } else {
                 System.err.println("File already exists.");
             }
-            
-            FileWriter Writer = new FileWriter("myFile.txt", true);
 
-            System.out.println("What do you want to write in the file 'myFile.txt'");
+            FileWriter Writer = new FileWriter(fileName, true);
+
+            System.out.println("What do you want to write in the file " + obj.getName());
             String  a = sc.nextLine();
             if(obj.length() == 0) {
                 Writer.write(a);
             } else {
-                Writer.write(' ' + a);
+                Writer.write(" " + a);
             }
             Writer.close();
 
@@ -31,7 +34,7 @@ public class  FileOperations {
         }
 
         try {
-            File obj = new File("myFile.txt");
+            File obj = new File(fileName);
             Scanner Reader = new Scanner(obj);
 
             while (Reader.hasNextLine()) {
@@ -47,7 +50,7 @@ public class  FileOperations {
             e.printStackTrace();
         }
 
-        File obj = new File("myFile.txt");
+        File obj = new File(fileName);
 
         System.out.println("Do you want to delete this file");
         System.out.println("1 for No || 2 for Yes");
